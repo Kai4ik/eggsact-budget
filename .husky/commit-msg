@@ -1,19 +1,19 @@
-#!/usr/bin/env sh
 # shellcheck disable=SC1091,SC3010
-. "$(dirname -- "$0")/_/husky.sh"
 
 message="$(cat "$1")"
 requiredPattern="^(feat|fix|style|refactor|test|cd|docs|chore): .*$"
 if ! [[ $message =~ $requiredPattern ]];
 then
-  echo "-"
+  echo ""
+  echo "-----------"
   echo "🚨 Wrong commit message! 😕"
   echo "The commit message must have this format:"
   echo "<type of commit>: <what was done>"
   echo "Allowed types: feat, fix, hotfix, style, refactor, test, cd, docs, chore, reformat, build, revert, ci, perf"
   echo "Visit: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/"
   echo "Example: test: implemented cypress e2e test for login page"
-  echo "-"
+  echo "-----------"
   echo "Your commit message was:" "$message"
+  echo ""
   exit 1
 fi
