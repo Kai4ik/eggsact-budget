@@ -36,6 +36,10 @@ const config: Config = {
         500: "#64748b",
       },
 
+      neutral: {
+        800: "#262626",
+      },
+
       gray: {
         200: "#e5e7eb",
         300: "#d1d5db",

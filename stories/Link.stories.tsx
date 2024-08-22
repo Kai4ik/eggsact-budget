@@ -7,9 +7,13 @@ const meta = {
     title: "Link",
     component: Link,
     args: {
-        label: "Link Text", href: "https://github.com/Kai4ik?tab=repositories"
+        children: <p>Link Text</p>,
+        href: "https://github.com/Kai4ik?tab=repositories"
     },
     argTypes: {
+        children: {
+            table: { disable: true },
+        },
         target: {
             control: "select",
             options: ["_self", "_blank", "_parent", "_top", "_unfencedTop"],
@@ -17,7 +21,6 @@ const meta = {
         href: {
             control: "text",
         },
-
         icon: {
             control: "select",
             options: ["Plus", "Checkmark"],
@@ -38,11 +41,6 @@ export const DefaultLink: Story = {};
 export const LinkWithIcon: Story = {
     args: {
         icon: <FaPlus size={14} />,
-    },
-    argTypes: {
-        label: {
-            table: { disable: true },
-        },
     },
 };
 

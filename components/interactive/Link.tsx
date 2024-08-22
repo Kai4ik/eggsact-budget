@@ -1,9 +1,8 @@
-import { ComponentProps, ReactElement } from "react";
+import { ComponentProps, ReactElement, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
-import NextLink from "next/link";
+import NextLink, { LinkProps as LP } from "next/link";
 
-type LinkProps = ComponentProps<"a"> & {
-    label?: string;
+type LinkProps = ComponentProps<"a"> & LP & {
     icon?: ReactElement;
     iconAlignment?: "left" | "right";
     addUnderline?: boolean;
@@ -11,8 +10,8 @@ type LinkProps = ComponentProps<"a"> & {
 };
 
 const Link = ({
-    label, href, className, iconAlignment = "right", icon, addUnderline, monochrome, ...props
-}: LinkProps) => {
+    href, className, iconAlignment = "right", icon, addUnderline, monochrome, children, ...props
+}: PropsWithChildren<LinkProps>) => {
     return (
         <NextLink
             href={href ?? ""}
@@ -26,7 +25,7 @@ const Link = ({
             )}
         >
             {iconAlignment === "left" && icon}
-            {label}
+            {children}
             {iconAlignment === "right" && icon}
         </NextLink>
 
