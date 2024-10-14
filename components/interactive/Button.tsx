@@ -76,8 +76,8 @@ const Button = ({
     target,
     icon,
     iconAlignment = "right",
-    loading,
-    disabled,
+    loading = false,
+    disabled = false,
     ...props
 }: ButtonProps) => {
     if (as === "link")

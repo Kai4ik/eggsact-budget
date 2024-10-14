@@ -28,6 +28,10 @@ const config: Config = {
         light: "#F32A2A",
       },
 
+      zinc: {
+        200: "#f4f4f5",
+      },
+
       blue: {
         600: "#2563eb",
       },

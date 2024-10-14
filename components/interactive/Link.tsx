@@ -19,7 +19,7 @@ const Link = ({
             className={twMerge(
                 className,
                 monochrome ? `${addUnderline && "border-b border-current"}` : `${addUnderline && "border-b border-primary"} text-primary hover:text-primary-dark active:text-primary-light hover:border-b hover:border-primary-dark active:border-primary-light`,
-                "inline-flex justify-center items-center gap-x-2",
+                "inline-flex justify-center items-center gap-x-2 w-fit",
                 "transition-colors duration-300 leading-5"
 
             )}
