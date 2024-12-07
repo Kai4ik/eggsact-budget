@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { ObjectSchema } from "yup";
 
 type WrapperProps = {
-    onSubmit: () => void,
+    onSubmit: any,
     defaultValues?: { [key: string]: string; }
     classname?: string;
     schema: ObjectSchema<{ [key: string]: string; }>
